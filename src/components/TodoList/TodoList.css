@@ -1,0 +1,24 @@
+.todoForm{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.todoForm input{
+    height: 30px;
+    flex-basis: 60%;
+    outline: none;
+}
+.todoForm button{
+    flex-basis: 20%;
+    cursor: pointer;
+}
+.contextCont{
+    display: flex;
+    justify-content: center;
+}
+.contextCont ul li{
+    list-style: none;
+    margin-bottom: 10px;
+    background-color: aliceblue;
+}
