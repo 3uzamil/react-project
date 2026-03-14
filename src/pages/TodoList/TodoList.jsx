@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./TodoList.css";
+import Header from "../../components/Header";
 
 export default function TodoList() {
   let [todoItems, setTodoItems] = useState([]);
@@ -23,6 +24,8 @@ export default function TodoList() {
     return <TodoHandle todoItems={item} key={index} />;
   });
   return (
+    <>
+    <Header />
     <div>
       <h1 style={{ textAlign: "center" }}>Todo List</h1>
       <form onSubmit={saveTodo} className="todoForm">
@@ -33,6 +36,7 @@ export default function TodoList() {
         <ul>{todoContext != undefined ? todoContext : ""}</ul>
       </div>
     </div>
+    </>
   );
 }
 

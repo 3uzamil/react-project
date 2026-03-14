@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { QuestionData } from "./QuestionData";
+import Header from "../../components/Header";
 let Faq = () => {
   let [showAns, setShowAns] = useState(0);
   let items = QuestionData.map((itemsData, i) => {
@@ -11,10 +12,13 @@ let Faq = () => {
     return <FaqItems faq={faq} key={i} />;
   });
   return (
+    <>
+    <Header />
     <div>
       <h1 className="faqHeading">FAQ</h1>
       {items}
     </div>
+    </>
   );
 }
 
