@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./Faq.css"
 import { QuestionData } from "./QuestionData";
 import Header from "../../components/Header";
 let Faq = () => {
@@ -13,9 +14,8 @@ let Faq = () => {
   });
   return (
     <>
-    <Header />
+    <Header pageName={"Faq"} />
     <div>
-      <h1 className="faqHeading">FAQ</h1>
       {items}
     </div>
     </>

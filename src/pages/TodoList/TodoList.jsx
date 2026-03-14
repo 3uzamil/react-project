@@ -25,7 +25,7 @@ export default function TodoList() {
   });
   return (
     <>
-    <Header />
+    <Header pageName={"Todo List"} />
     <div>
       <h1 style={{ textAlign: "center" }}>Todo List</h1>
       <form onSubmit={saveTodo} className="todoForm">

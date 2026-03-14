@@ -1,0 +1,24 @@
+.faqItems {
+  border: #242424 solid 2px;
+  background-color: mediumaquamarine;
+  margin-bottom: 10px;
+}
+.faqItems h2 {
+  background-color: #242424;
+  margin: 0;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+.faqItems p {
+  height: 0;
+  padding: 0;
+  margin: 0;
+  transform: scaleY(0);
+  transition: 0.3s ease;
+}
+.show {
+  padding: 20px 10px !important;
+  height: auto !important;
+  transform: scaleY(1) !important;
+}
