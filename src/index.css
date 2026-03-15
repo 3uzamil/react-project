@@ -21,6 +21,9 @@ a {
   color: #e5e5e5;
   text-decoration: none;
 }
+button:hover{
+  cursor: pointer;
+}
 .loginForm {
   height: 400px;
   background-color: gold;
@@ -29,6 +32,19 @@ a {
   align-items: center;
   flex-direction: column;
   gap: 20px;
+}
+.loginForm input{
+  height: 30px;
+  margin: 5px;
+  padding: 0 5px;
+  outline: none;
+}
+.loginForm button{
+  background-color: gray;
+  border: 2px solid #e5e5e5;
+  border-radius: 5px;
+  color: #e5e5e5;
+  padding: 5px 10px;
 }
 @media (max-width: 786px) {
   .headerNavbar {
