@@ -5,6 +5,7 @@ import Home from './pages/Home'
 import Faq from './pages/Faq/Faq'
 import TodoList from './pages/TodoList/TodoList'
 import Login from './pages/Login'
+import Register from './pages/Register'
 
 let allRouter = createBrowserRouter([
   {
@@ -26,7 +27,11 @@ let allRouter = createBrowserRouter([
   {
     path: "login",
     element: <Login />
-  }
+  },
+  {
+    path: "Register",
+    element: <Register />
+  },
 ]);
 export default function App() {
   return (

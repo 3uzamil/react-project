@@ -9,6 +9,7 @@ export default function Header({pageName}) {
             <li><Link to={"/faq"}>Faq</Link></li>
             <li><Link to={"/todolist"}>Todo List</Link></li>
             <li><Link to={"/login"}>Login</Link></li>
+            <li><Link to={"/register"}>Register</Link></li>
         </ul>
     </div>
   )
