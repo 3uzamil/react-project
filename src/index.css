@@ -21,7 +21,7 @@ a {
   color: #e5e5e5;
   text-decoration: none;
 }
-button:hover{
+button:hover {
   cursor: pointer;
 }
 .loginForm {
@@ -33,23 +33,55 @@ button:hover{
   flex-direction: column;
   gap: 20px;
 }
-.loginForm input{
+.loginForm input {
   height: 30px;
   margin: 5px;
   padding: 0 5px;
   outline: none;
 }
-.loginForm button{
+.loginForm button {
   background-color: gray;
   border: 2px solid #e5e5e5;
   border-radius: 5px;
   color: #e5e5e5;
   padding: 5px 10px;
 }
+.registerationSection {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+.form {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  margin-right: 20px;
+  gap: 10px;
+  flex-basis: 30%;
+}
+.form input,
+.form textarea {
+  height: 30px;
+  width: 100%;
+  padding: 5px 10px;
+  outline: none;
+  border: 2px solid gold;
+  border-radius: 5px;
+}
+.outputContainer {
+  flex-basis: 50%;
+  background-color: #e5e5e5;
+  border-radius: 5px;
+  padding: 10px;
+}
 @media (max-width: 786px) {
   .headerNavbar {
     justify-content: center;
     flex-direction: column;
     gap: 15px;
+  }
+  .registerationSection {
+    flex-direction: column;
+    justify-content: center;
   }
 }
