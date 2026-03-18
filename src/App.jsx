@@ -9,10 +9,6 @@ import Register from './pages/Register'
 
 let allRouter = createBrowserRouter([
   {
-    path: "*",
-    element: <Error404 />
-  },
-  {
     path: "/",
     element: <Home />
   },
@@ -31,6 +27,10 @@ let allRouter = createBrowserRouter([
   {
     path: "Register",
     element: <Register />
+  },
+  {
+    path: "*",
+    element: <Error404 />
   },
 ]);
 export default function App() {
