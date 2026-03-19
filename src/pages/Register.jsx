@@ -20,23 +20,40 @@ export default function Register() {
 
   let formHandle = (event) => {
     event.preventDefault();
-    let filterCheck = userData.filter((v) => v.email == formData.email || v.phone == formData.phone);
-    if(filterCheck.length == 0){
-    let oldData = [...userData, formData];
-    setUserData(oldData);
+    let filterCheck = userData.filter((v,i) => (v.email == formData.email || v.phone == formData.phone) && i !== formData.index);
+    if (filterCheck.length == 0) {
+    console.log(filterCheck);
+    if(formData.index === ""){
+      let oldData = [...userData, formData];
+      setUserData(oldData);
+    }
+    else{
+      let oldData = [...userData];
+      oldData[formData.index] = formData;
+      setUserData(oldData);
+    }
     setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      address: "",
-      index: "",
-    });
-  }
-  else{
-    alert("Email or Phone already exist...");
-  }
+        name: "",
+        email: "",
+        phone: "",
+        address: "",
+        index: "",
+      });
+    } else {
+      alert("Email or Phone already exist...");
+    }
   };
-  let items = userData.map((item,index) => {
+  let deleteFunc = (indexNumber) => {
+    let filterData = userData.filter((v, i) => i != indexNumber);
+    setUserData(filterData);
+  };
+  let editFunc = (indexNumber) => {
+    let filterData = userData.filter((v, i) => i == indexNumber)[0];
+    filterData.index = indexNumber;
+    setFormData(filterData);
+
+  };
+  let items = userData.map((item, index) => {
     return (
       <tr key={index}>
         <td>{item.name}</td>
@@ -44,8 +61,8 @@ export default function Register() {
         <td>{item.phone}</td>
         <td>{item.address}</td>
         <td>
-          <button>Delete</button>
-          <button>Edit</button>
+          <button onClick={() => deleteFunc(index)}>Delete</button>
+          <button onClick={() => editFunc(index)}>Edit</button>
         </td>
       </tr>
     );
@@ -61,6 +78,7 @@ export default function Register() {
             onChange={inputControl}
             name="name"
             value={formData.name}
+            required
           />
           <label>Email</label>
           <input
@@ -68,6 +86,7 @@ export default function Register() {
             onChange={inputControl}
             name="email"
             value={formData.email}
+            required
           />
           <label>Phone</label>
           <input
@@ -75,6 +94,7 @@ export default function Register() {
             onChange={inputControl}
             name="phone"
             value={formData.phone}
+            required
           />
           <label>Address</label>
           <textarea
@@ -82,8 +102,11 @@ export default function Register() {
             onChange={inputControl}
             name="address"
             value={formData.address}
+            required
           />
-          <button type="submit">Save</button>
+          <button type="submit">
+            {formData.index === "" ? "Save" : "Update"}
+          </button>
         </form>
         <div className="outputContainer">
           <table border={"2px"}>
@@ -96,9 +119,7 @@ export default function Register() {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>{
-            items != [] ? items : ""
-          }</tbody>
+            <tbody>{items != [] ? items : ""}</tbody>
           </table>
         </div>
       </section>
